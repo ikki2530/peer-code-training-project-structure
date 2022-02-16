@@ -31,3 +31,5 @@
 //div[@class="movies-container"]/div[1]/following::div[@class="movie-box row"]
 
 //a[contains(text(), "SPIDERMAN")]
+
+//section[@class="usmf-new article-body"]//ol[2]/li

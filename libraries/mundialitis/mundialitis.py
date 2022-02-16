@@ -39,3 +39,26 @@ class Mundialitis():
         self.browser.click_element('//button[@name="login"]')
         act_on_element('//div[@id="main"]', "find_element")
         return
+
+    def register_new_user(self):
+        """
+        Function that registers a new user.
+        """
+        new_user = "RPATRAINING2"
+        self.browser.go_to(self.mundialitis_url)
+        self.browser.input_text_when_element_is_visible('//input[@id="rusername"]', new_user)
+        self.browser.input_text_when_element_is_visible('//input[@id="rpassword"]', new_user)
+        self.browser.input_text_when_element_is_visible('//input[@id="rpassword2"]', new_user)
+        act_on_element('//button[@name="register" and @type="submit"]', "click_element")
+        self.browser.input_text_when_element_is_visible('//input[@id="rfirstname"]', "RPA2")
+        self.browser.input_text_when_element_is_visible('//input[@id="rlastname"]', "TRAINING2")
+        self.browser.input_text_when_element_is_visible('//input[@id="remail"]', "rpa2@training.com")
+        self.browser.input_text_when_element_is_visible('//input[@id="raddress"]', "RPA TRAINING ADDRESS 2")
+        act_on_element('//select[@id="rcountry"]', "click_element")
+        act_on_element('//select[@id="rcountry"]/option[@value="Perú"]', "click_element")
+        self.browser.input_text_when_element_is_visible('//input[@id="rmoney"]', "1500")
+        act_on_element('//button[@name="cmpregister" and @type="submit"]', "click_element")
+        act_on_element('//div[@id="main"]', "find_element")
+        
+
+

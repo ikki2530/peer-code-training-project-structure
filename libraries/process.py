@@ -19,13 +19,14 @@ class Process:
         browser.maximize_browser_window()
         mundialitis = Mundialitis(browser, credentials["Mundialitis"])
         mundialitis.login()
+        self.mundialitis = mundialitis
 
 
 
     def start(self):
-        log_message("Macro Step 1")
-        log_message("Macro Step 2")
-        log_message("Macro Step 3")
+        log_message("Start - Register New User")
+        self.mundialitis.register_new_user()
+        log_message("Finish - Register New User")
 
     def finish(self):
         capture_page_screenshot(OUTPUT_FOLDER, "Mundialitis_Login")
